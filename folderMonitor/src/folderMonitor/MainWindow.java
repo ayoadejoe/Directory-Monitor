@@ -82,11 +82,10 @@ public class MainWindow extends JFrame {
 	            }
 	        }
 	    } catch (Exception e) {
-	        // If Nimbus is not available, fall back to cross-platform
 	        try {
 	            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 	        } catch (Exception ex) {
-	            // Not worth my time
+	            ex.printStackTrace();
 	        }
 	    }
 		EventQueue.invokeLater(new Runnable() {
@@ -166,7 +165,6 @@ public class MainWindow extends JFrame {
 		try {
 			hname = java.net.InetAddress.getLocalHost();
 		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		who = System.getProperty("user.name")+", "+hname;

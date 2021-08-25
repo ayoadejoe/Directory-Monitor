@@ -16,9 +16,9 @@ public class Settings {
 		prefs = Preferences.userRoot().node(this.getClass().getName());
 		directories = prefs.get(dirID, "Home"); 
 		
-		toEmail = prefs.get("toeml", "admin@iq-joy.com"); 
-		domain = prefs.get("domID", "mail.iq-joy.com"); 
-		fromEmail = prefs.get("fromID", "admin@iq-joy.com");
+		toEmail = prefs.get("toeml", "admin@xxxxx.com"); 
+		domain = prefs.get("domID", "mail.xxxxx.com"); 
+		fromEmail = prefs.get("fromID", "admin@xxxxx.com");
 		fromPassword = prefs.get("pwdID", "xyz"); 
 		
 	}

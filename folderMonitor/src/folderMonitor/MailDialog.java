@@ -29,6 +29,7 @@ import javax.swing.border.EmptyBorder;
 
 public class MailDialog extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtAbcdefghgmailcom;
 	private JTextField textFieldMailServer;
@@ -38,10 +39,10 @@ public class MailDialog extends JFrame {
 	private String toEmlID, domID, fromEmlID, fromPwID, who;
 	private Settings settings = new Settings();
 	
-	public MailDialog(String parentClass) {
+	public MailDialog() {
 		setTitle("MAIL ALERT SETTINGS");
 		setAlwaysOnTop(true);
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(MailDialog.class.getResource("/folderMonitor/LOGO1.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MailDialog.class.getResource("/folderMonitor/LOGO1.png")));
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -52,7 +53,6 @@ public class MailDialog extends JFrame {
 		try {
 			hname = java.net.InetAddress.getLocalHost();
 		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		who = System.getProperty("user.name")+", "+hname;
@@ -216,6 +216,7 @@ public class MailDialog extends JFrame {
 				public void focusGained(FocusEvent e) {
 					textFieldHostPw.setText("");
 				}
+				@SuppressWarnings("deprecation")
 				@Override
 				public void focusLost(FocusEvent e) {
 					fromPassword = textFieldHostPw.getText().trim();
@@ -262,6 +263,7 @@ public class MailDialog extends JFrame {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					boolean proceed = true;
+					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent e) {
 						
 						toEmail = txtAbcdefghgmailcom.getText().trim();

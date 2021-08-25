@@ -85,7 +85,6 @@ public class MainWindow extends JFrame {
 	        try {
 	            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 	        } catch (Exception ex) {
-	            ex.printStackTrace();
 	        }
 	    }
 		EventQueue.invokeLater(new Runnable() {
@@ -165,6 +164,7 @@ public class MainWindow extends JFrame {
 		try {
 			hname = java.net.InetAddress.getLocalHost();
 		} catch (UnknownHostException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		who = System.getProperty("user.name")+", "+hname;
@@ -221,7 +221,7 @@ public class MainWindow extends JFrame {
 		emailMenuItem = new JMenuItem("Email Settings");
 		emailMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MailDialog mailDialog = new MailDialog(this.getClass().getName());
+				new MailDialog();
 			}
 		});
 		alertMenu.add(emailMenuItem);

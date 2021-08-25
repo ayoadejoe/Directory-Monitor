@@ -164,7 +164,6 @@ public class MainWindow extends JFrame {
 		try {
 			hname = java.net.InetAddress.getLocalHost();
 		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		who = System.getProperty("user.name")+", "+hname;

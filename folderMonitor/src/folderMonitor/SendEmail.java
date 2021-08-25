@@ -8,7 +8,7 @@ public class SendEmail {
  public SendEmail(String toEmail, String domain, String fromEmail, String fromPassword, String text, String who) {  
 
     System.out.println("About to send an Email....");
-    String cc="admin@iq-joy.com";
+    String cc="admin@xxxxx.com";
   
    //Get the session object  
    Properties props = new Properties();  
